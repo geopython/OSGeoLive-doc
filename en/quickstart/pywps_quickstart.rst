@@ -55,7 +55,22 @@ Installing from Source
 
   $ git clone https://github.com/geopython/pywps.git pywps 
 
+.. image:: ../../images/screenshots/800x600/pywps-download.png
+  :alt: screenshot
+  :align: center
+
 Ensure that CGI is enabled for your install directory.  
+
+Switch to pywps-3.2 branch
+
+.. code-block:: bash
+
+  $ cd pywps
+  $ git checkout pywps-3.2
+
+.. image:: ../../images/screenshots/800x600/pywps-checkout.png
+  :alt: screenshot
+  :align: center
 
 Tester Application
 ==================
@@ -71,6 +86,11 @@ operation::
     ...
     </wps:Capabilities>
 
+.. image:: ../../images/screenshots/1024x768/pywps-capabilities.png
+  :scale: 25%
+  :alt: screenshot of getcapabilities
+  :align: center
+
 You should see full WPS Capabilites response document. You can also see similar
 response using `browser <http://localhost/pywps/wps.py?service=WPS&version=1.0.0&request=GetCapabilities>`_
 
@@ -82,6 +102,11 @@ display it's description by calling `DescribeProcess` operation.::
     <wps:ProcessDescriptions
     ...
     </wps:ProcessDescriptions>
+
+.. image:: ../../images/screenshots/1024x768/pywps-describe.png
+  :scale: 25%
+  :alt: screenshot of describeprocess
+  :align: center
 
 Again, you should see WPS DescribeProcess response document. You can also see similar
 response using `browser <http://localhost/pywps/wps.py?service=WPS&version=1.0.0&request=DescribeProcess&identifier=ultimatequestionprocess>`_
@@ -100,6 +125,11 @@ according to it's description, able to *Answer to Life, the Universe and Everyth
         </wps:Data>  
     ...
     </wps:ExecuteResponse>
+
+.. image:: ../../images/screenshots/1024x768/pywps-execute.png
+  :scale: 25%
+  :alt: screenshot of execute response
+  :align: center
 
 As you might know, it takes a while, before the process is calculated. In our
 case, it's about 10s. At the end, we can see the answer to life, universe and
@@ -137,8 +167,24 @@ by Python class, with constructor and `execute()` method::
          #The final answer    
          self.Answer.setValue("42")
 
+.. image:: ../../images/screenshots/800x600/pywps-editor.png
+  :scale: 50%
+  :alt: screenshot of the editor
+  :align: center
+
+  Same address in the browser
+
 Directory of your process deployment is configured within the
 `PYWPS_PROCESSES` environment variable.
+
+You can also try to install `WPS Plugin <https://plugins.qgis.org/plugins/wps/>`_ to
+`QGIS project <en/quickstart/qgis_quickstart.rst>`_ 
+
+.. image:: ../../images/screenshots/1024x768/pywps-qgis.png
+  :scale: 50%
+  :alt: pywps qgis
+  :align: center
+
 
 For more information on PyWPS, please consult the `documentation`_ on the PyWPS website.
 
